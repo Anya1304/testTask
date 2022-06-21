@@ -18,10 +18,10 @@ public class ArticleService {
     }
 
     private void filterArticle(Article article) {
-        if(article.getColor() == null || article.getColor().name().equals("UNDEFINED")){
+        if (article.getColor() == null || article.getColor().name().equals("UNDEFINED")) {
             throw new IllegalArgumentException("Color can`t be " + article.getColor());
         }
-        if(article.getUserId() == null){
+        if (article.getUserId() == null) {
             throw new IllegalArgumentException("User id can`t be null");
         }
     }

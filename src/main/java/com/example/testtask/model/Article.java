@@ -13,7 +13,7 @@ public class Article {
     private String text;
     private Color color;
     @ManyToOne
-    @JoinColumn(name = "user_id",  insertable = false, updatable = false)
+    @JoinColumn(name = "user_id", insertable = false, updatable = false)
     private User user;
 
     @Column(name = "user_id")

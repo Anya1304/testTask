@@ -2,7 +2,6 @@ package com.example.testtask.controller;
 
 import com.example.testtask.model.Article;
 import com.example.testtask.model.Color;
-import com.example.testtask.model.User;
 import com.example.testtask.repository.ArticleRepository;
 import com.example.testtask.service.ArticleService;
 import org.junit.jupiter.api.BeforeEach;
