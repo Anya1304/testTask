@@ -9,8 +9,8 @@
 ```
 2. Compile and run tests 
 ```properties
-   mvn compile
-   mvn test
+    mvn compile
+    mvn test
 ```
 3. Run the collection in Postman
 
