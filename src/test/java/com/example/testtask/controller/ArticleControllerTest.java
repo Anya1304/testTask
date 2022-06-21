@@ -30,8 +30,7 @@ public class ArticleControllerTest {
     @Test
     public void whenSaveArticleThenShouldCallRepositoryMethod() {
         //GIVEN
-        User user = createUser("Hanna", 21);
-        Article article = createArticle("test", Color.GREEN, user);
+        Article article = createArticle("test", Color.GREEN, 1);
         //WHEN
         articleController.saveArticle(article);
         //THEN
@@ -41,8 +40,7 @@ public class ArticleControllerTest {
     @Test
     public void whenSaveArticleWithWrongColorThenThrownException() {
         //GIVEN
-        User user = createUser("Hanna", 21);
-        Article article = createArticle("test", Color.UNDEFINED, user);
+        Article article = createArticle("test", Color.UNDEFINED, 1);
         //THEN
         assertThatThrownBy(() -> articleController.saveArticle(article))
                 .isInstanceOf(IllegalArgumentException.class)
@@ -52,7 +50,6 @@ public class ArticleControllerTest {
     @Test
     public void whenSaveArticleWithNullUserThenThrownException() {
         //GIVEN
-        User user = createUser("Hanna", 21);
         Article article = createArticle("test", Color.UNDEFINED, null);
         //THEN
         assertThatThrownBy(() -> articleController.saveArticle(article))
@@ -60,18 +57,11 @@ public class ArticleControllerTest {
                 .hasMessage("Color can`t be " + article.getColor());
     }
 
-    private Article createArticle(String text, Color color, User user) {
+    private Article createArticle(String text, Color color, Integer userId) {
         Article article = new Article();
         article.setText(text);
         article.setColor(color);
-        article.setUser(user);
+        article.setUserId(userId);
         return article;
-    }
-
-    private User createUser(String name, int age) {
-        User user = new User();
-        user.setName(name);
-        user.setAge(age);
-        return user;
     }
 }
