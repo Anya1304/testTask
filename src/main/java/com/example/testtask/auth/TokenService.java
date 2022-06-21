@@ -15,7 +15,6 @@ public class TokenService {
             Algorithm algorithm = Algorithm.HMAC256(TOKEN_SECRET);
             JWTVerifier verifier = JWT.require(algorithm)
                     .build();
-            token = token.replace("Bearer ", "");
             verifier.verify(token);
             return true;
         } catch (JWTVerificationException e) {
