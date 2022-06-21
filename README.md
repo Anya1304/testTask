@@ -7,7 +7,7 @@
     spring.datasource.password=
     spring.datasource.url=
 ```
-2. Compile and run tests 
+2. Compile project and run tests 
 ```properties
     mvn compile
     mvn test
